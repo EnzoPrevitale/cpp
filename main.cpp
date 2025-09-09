@@ -1,16 +1,26 @@
 #include <iostream>
 #include <string>
-#include <vector>
 using namespace std;
 
-int* ptr = new int;
+class Person{
+    public:
+        string name;
+        int age;
+        
+        void greet() {
+            cout << "Hello, my name is " << name << ". I am " << age << " years old.";
+        }
+};
 
 int main() {
-   *ptr = 10;
-   cout << *ptr;
-   delete ptr;
-
-   cout << *ptr;
-
+    Person person;
+    
+    cout << "Type your name: ";
+    getline(cin, person.name);
+    cout << "Type your age: ";
+    cin >> person.age;
+    
+    person.greet();
+    
     return 0;
 }
